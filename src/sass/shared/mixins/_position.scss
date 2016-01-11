@@ -1,0 +1,16 @@
+@mixin position ($position: relative, $coordinates: null, $zIndex: null) {
+  position: $position;
+
+  $coordinates: unpack($coordinates);
+  $props: top right bottom left;
+  @for $i from 1 through 4 {
+    $coordinate: nth($coordinates, $i);
+    @if ($coordinate == auto) or (type-of($coordinate) == number) {
+      #{nth($props, $i)}: $coordinate;
+    }
+  }
+
+  @if ($zIndex) {
+    z-index: $zIndex
+  }
+}

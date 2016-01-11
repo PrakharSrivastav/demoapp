@@ -1,0 +1,22 @@
+@mixin triangle ($size, $color, $direction) {
+  width: 0;
+  height: 0;
+
+  @if ($direction == up) or ($direction == down) {
+    border-left: $size solid transparent;
+    border-right: $size solid transparent;
+    @if ($direction == up) {
+      border-bottom: $size solid $color;
+    } @else {
+      border-top: $size solid $color;
+    }
+  } @else {
+    border-top: $size solid transparent;
+    border-bottom: $size solid transparent;
+    @if ($direction == right) {
+      border-left: $size solid $color;
+    } @else {
+      border-right: $size solid $color;
+    }
+  }
+}

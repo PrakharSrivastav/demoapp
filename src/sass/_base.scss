@@ -1,0 +1,21 @@
+[v-cloak] {
+  display: none;
+}
+
+:root {
+  box-sizing: border-box;
+}
+
+*, ::before, ::after {
+  box-sizing: inherit;
+}
+
+html {
+  font-family: $font--sans;
+  background-color: $color--white;
+  color: $color--black;
+}
+
+body {
+  margin: 0;
+}
